@@ -67,3 +67,11 @@ const createNewBlock = (data: string): Block => {
   addBlock(newBlock);
   return newBlock;
 };
+
+const getHashforBlock = (aBlock: Block): string =>
+  Block.calculateBlockHash(
+    aBlock.index,
+    aBlock.previousHash,
+    aBlock.timestemp,
+    aBlock.data
+  );
